@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sizanur Rahman – Portfolio</title>
+  <meta name="description" content="Portfolio website for Md. Sizanur Rahman – CSE student & aspiring web developer from Bangladesh." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0d1117; --panel:#161b22; --text:#e6edf3; --muted:#9fb0c3; --brand:#3fa9f5; --brand-2:#66ffcc; --card:#0f1520; --line:#1c2736;
+    }
+    *{box-sizing:border-box; margin:0; padding:0}
+    html,body{font-family:Poppins,system-ui,sans-serif; background:var(--bg); color:var(--text); scroll-behavior:smooth}
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    header{position:sticky; top:0; z-index:10; backdrop-filter:saturate(180%) blur(12px); background:rgba(13,17,23,.85); border-bottom:1px solid var(--line)}
+    .container{width:min(1100px,92%); margin-inline:auto}
+    nav{display:flex; align-items:center; gap:20px; padding:16px 0; animation:fadeDown 1s ease}
+    nav .brand{font-weight:800; font-size:22px; letter-spacing:.5px; color:var(--brand-2)}
+    nav .spacer{flex:1}
+    nav a{padding:8px 14px; border-radius:12px; transition:.3s}
+    nav a:hover{background:var(--panel)}
+
+    .btn{display:inline-block; padding:12px 18px; border-radius:14px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#0d1117; font-weight:700; box-shadow:0 6px 18px rgba(63,169,245,.35); transition:.3s}
+    .btn:hover{filter:brightness(1.07); transform:translateY(-3px)}
+
+    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:32px; align-items:center; padding:70px 0 40px}
+    .hero h1{font-size:clamp(30px,4.6vw,50px); line-height:1.1; margin:10px 0 16px; animation:fadeUp 1.1s ease}
+    .hero p{color:var(--muted); margin:0 0 20px; font-size:17px; animation:fadeUp 1.4s ease}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0) 70%); border:1px solid var(--line); border-radius:20px; padding:22px; animation:fadeIn 1.8s ease}
+    .badge{display:inline-block; padding:6px 12px; border:1px solid var(--line); border-radius:999px; color:var(--muted); font-size:13px}
+
+    .profile-pic{width:220px; height:220px; border-radius:50%; background:linear-gradient(135deg,var(--brand),var(--brand-2)); padding:4px; animation:fadeIn 1.6s ease}
+    .profile-pic img{width:100%; height:100%; border-radius:50%; object-fit:cover; display:block}
+
+    .kpi{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:18px}
+    .kpi div{background:var(--card); border:1px solid var(--line); padding:16px; border-radius:14px; text-align:center; transition:.3s}
+    .kpi div:hover{transform:scale(1.07); background:var(--panel)}
+    .kpi b{font-size:22px}
+
+    section{padding:60px 0; animation:fadeIn 1.2s ease}
+    section h2{font-size:28px; margin:0 0 22px; color:var(--brand)}
+    .grid{display:grid; gap:18px}
+
+    .about{grid-template-columns:1fr 1fr}
+    .about p{color:var(--muted); font-size:16px; line-height:1.6}
+
+    .skills{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+    .skill{background:var(--card); border:1px solid var(--line); padding:18px; border-radius:16px; transition:.3s}
+    .skill:hover{transform:translateY(-5px); background:var(--panel)}
+    .skill small{color:var(--muted)}
+
+    .projects{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .proj{background:var(--card); border:1px solid var(--line); padding:18px; border-radius:18px; display:flex; flex-direction:column; gap:10px; transition:.3s}
+    .proj:hover{transform:scale(1.04); background:var(--panel)}
+    .proj h3{margin:0; color:var(--brand-2)}
+    .chip{display:inline-block; font-size:12px; padding:4px 9px; border:1px solid var(--line); border-radius:999px; color:var(--muted); margin-right:6px}
+
+    form{display:grid; gap:14px}
+    input,textarea{width:100%; padding:14px 16px; background:#0b111b; border:1px solid var(--line); border-radius:12px; color:var(--text)}
+    textarea{min-height:120px; resize:vertical}
+
+    footer{padding:32px 0; border-top:1px solid var(--line); color:var(--muted); font-size:14px; text-align:center; animation:fadeUp 1.2s ease}
+
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes fadeUp{from{opacity:0; transform:translateY(24px)}to{opacity:1; transform:translateY(0)}}
+    @keyframes fadeDown{from{opacity:0; transform:translateY(-24px)}to{opacity:1; transform:translateY(0)}}
+
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr; text-align:center}
+      .profile-pic{margin:auto}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">Md. Sizanur Rahman</div>
+        <div class="spacer"></div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="container">
+    <section class="hero">
+      <div>
+        <span class="badge">CSE Student • Rajshahi, Bangladesh</span>
+        <h1>Hi, I'm <span style="background:linear-gradient(135deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent;">Md. Sizanur Rahman</span><br />Aspiring Web Developer 🚀</h1>
+        <p>I’m passionate about <b>web development</b>, building user-friendly platforms and interactive apps. Currently focused on <b>Online File Approval System</b> and exploring new front-end & back-end technologies.</p>
+        <div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap">
+          <a class="btn" href="#contact">Hire me</a>
+          <a class="badge" href="#projects">See my projects ↓</a>
+        </div>
+        <div class="kpi">
+          <div><b>6+</b><br><small>Web/App Projects</small></div>
+          <div><b>2026</b><br><small>Expected Graduation</small></div>
+          <div><b>92 WPM</b><br><small>Typing Speed</small></div>
+        </div>
+      </div>
+      <div class="profile-pic">
+        <img src="https://avatars.githubusercontent.com/u/123456789?v=4" alt="Profile Photo" />
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="grid about">
+        <p>I am a Computer Science & Engineering student from Bangladesh, highly interested in <b>web development</b>. I enjoy turning ideas into reality through clean, modern, and interactive designs. My aim is to become a full-stack developer while building practical solutions for real-world problems.</p>
+        <div class="card">
+          <b>Education & Contact</b>
+          <ul style="margin:12px 0 0; padding-left:18px; color:var(--muted)">
+            <li><b>BSc in CSE</b> — Expected 2026</li>
+            <li>Email: <a href="mailto:sizanur00@gmail.com">sizanur00@gmail.com</a></li>
+            <li>Phone: 01774455151 / 01518426425</li>
+            <li>Address: Lalpur (6421), Natore, Rajshahi</li>
+          </ul>
+          <div style="margin-top:12px">
+            <b>Links</b>
+            <div style="color:var(--muted); margin-top:6px"><a href="https://github.com/SIZANUR-00" target="_blank">GitHub</a></div>
+            <div style="color:var(--muted); margin-top:4px"><a href="https://www.linkedin.com/in/md-sizanur-rahman-860410264/" target="_blank">LinkedIn</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid skills">
+        <div class="skill"><b>Frontend</b><br><small>HTML, CSS, JavaScript</small></div>
+        <div class="skill"><b>Backend</b><br><small>PHP, REST basics</small></div>
+        <div class="skill"><b>Database</b><br><small>MySQL, SQL basics</small></div>
+        <div class="skill"><b>Android</b><br><small>Java, Android Studio</small></div>
+        <div class="skill"><b>Tools</b><br><small>Git/GitHub, XAMPP</small></div>
+        <div class="skill"><b>Focus</b><br><small>Web Development, UI/UX</small></div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid projects">
+        <article class="proj">
+          <h3>Online File Approval System</h3>
+          <p style="color:var(--muted)">Web-based platform for digital file submission, tracking, and approval with roles, login, and audit trail.</p>
+          <div>
+            <span class="chip">PHP</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">Auth</span>
+          </div>
+        </article>
+        <article class="proj">
+          <h3>Super Shop (Android)</h3>
+          <p style="color:var(--muted)">Android (Java) app for retail: product catalog, cart, and billing.</p>
+          <div>
+            <span class="chip">Android</span>
+            <span class="chip">Java</span>
+            <span class="chip">SQLite</span>
+          </div>
+        </article>
+        <article class="proj">
+          <h3>OBE Transcript & Feedback Management</h3>
+          <p style="color:var(--muted)">Education toolkit: PO/CO mapping, transcript generation, and analytics dashboards.</p>
+          <div>
+            <span class="chip">PHP</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+          </div>
+        </article>
+        <article class="proj">
+          <h3>Age Calculation Website</h3>
+          <p style="color:var(--muted)">Utility site that calculates exact age from a given date with a neat UI.</p>
+          <div>
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="grid" style="grid-template-columns:1.2fr .8fr">
+        <form action="mailto:sizanur00@gmail.com" method="post" enctype="text/plain">
+          <input required name="name" placeholder="Your name" />
+          <input required type="email" name="email" placeholder="Your email" />
+          <textarea required name="message" placeholder="Write your message..."></textarea>
+          <button class="btn" type="submit">Send</button>
+        </form>
+        <div class="card">
+          <b>Elsewhere</b>
+          <ul style="margin:12px 0 0; padding-left:18px; color:var(--muted)">
+            <li><a href="https://github.com/SIZANUR-00" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/md-sizanur-rahman-860410264/" target="_blank">LinkedIn</a></li>
+            <li><a href="#" onclick="alert('Add your Resume link (PDF) here!')">Download CV</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="y"></span> Md. Sizanur Rahman. All rights reserved. <br />
+      <small style="color:var(--muted)">"Keep building, keep learning."</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
